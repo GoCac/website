@@ -4,12 +4,71 @@
 	<title>Youhao Gong</title>
     <link rel="icon" href="http://www.gongyouhao.com/favicon.ico" type="image/x-icon">  
     <link rel="shortcut icon" href="http://www.gongyouhao.com/favicon.ico" type="image/x-icon">  
+    <link rel="stylesheet" href="./mdl/material.min.css">
+	<script src="./mdl/material.min.js"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
 <body>
-	<p>
-		<img src="https://dn-catch-app.qbox.me/shuttle.jpg" width="1920" height="1080" />
-	</p>
+	<div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
+	  <div class="mdl-snackbar__text"></div>
+	  <button class="mdl-snackbar__action" type="button"></button>
+	</div>
+
+	<div class="card-container">
+		<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+		  <div class="mdl-card__title">
+		    <h2 class="mdl-card__title-text">Welcome</h2>
+		  </div>
+		  <div class="mdl-card__supporting-text">
+		    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+		    Mauris sagittis pellentesque lacus eleifend lacinia...
+		  </div>
+		  <div class="mdl-card__actions mdl-card--border">
+		    <a id="demo-show-toast" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+		      Get Started
+		    </a>
+		  </div>
+		  <div class="mdl-card__menu">
+		    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+		      <i class="material-icons">share</i>
+		    </button>
+		  </div>
+		</div>
+	</div>
 </body>
+
+<script>
+(function() {
+  'use strict';
+  var snackbarContainer = document.querySelector('#demo-toast-example');
+  var showToastButton = document.querySelector('#demo-show-toast');
+  showToastButton.addEventListener('click', function() {
+    'use strict';
+    var date = Date()
+    var data = {message: date.toLocaleString()};
+    snackbarContainer.MaterialSnackbar.showSnackbar(data);
+  });
+}());
+</script>
+
+<style>
+.card-container {
+  position: absolute;
+  top: 20;
+  right: 20;
+}
+.demo-card-wide.mdl-card {
+  width: 512px;
+}
+.demo-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 176px;
+  background: url('https://dn-catch-app.qbox.me/shuttle.jpg') center / cover;
+}
+.demo-card-wide > .mdl-card__menu {
+  color: #fff;
+}
+</style>
 
 </html>
